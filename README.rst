@@ -5,9 +5,8 @@ judge0api
    :target: https://pypi.python.org/pypi/judge0api
    :alt: Latest PyPI version
 
-.. image:: https://travis-ci.org/vCra/judge0api.png
-   :target: https://travis-ci.org/vCra/judge0api
-   :alt: Latest Travis CI build status
+.. image:: https://travis-ci.com/vCra/judge0api.svg?branch=master
+    :target: https://travis-ci.com/vCra/judge0api
 
 
 judge0api is a Python API for interacting with the Judge0 REST API.
