@@ -1,0 +1,19 @@
+dist: xenial
+language: python
+python: 3.7
+
+install:
+  pip install setuptools
+
+script:
+  python setup.py pytest --addopts "--cov=judge0api --cov-report=xml"
+
+deploy:
+  provider: pypi
+  user: vCra
+  password:
+    secure: eUxRyPYCrKdzjZoeHYFC2JBTfQ4pAIW2KLi4ukXapK/3vgFU395Vf598vYG7m5Uhe1eAb7uI4L3MquztIrGjOdTHUifT6ikX+KdaHgQ0ydYgRzhvxwnKolQcSFN80DyvxWSR/emYuvW88rnbrZD7qB1m1DINUVZbKT0xakPovYsa74sUmdg3nziDifUbjKm5DsliHaGkjl5a7JiEotOfpcxdZ9N/9wCCnB3ugrvUsu6Iihv7Y2LBk3fTWD2Oot0N3n3TbNXXdV3uMhNu8A/++c/CcpFwR5Z+qKbILDr35TIMhKRqIwerE0c4pVhe+cr0Kyh6fZr9Rea5zW3lyOhqcSyjAC2DXf1a1amCGGIND3Tb7pVN9K1RshqGZ99keXUKuNXsBYC6wc2HixE+bh8jwegyaz9bQHqa99aqALKGRjPXy9z07UTeS1oTylCJ4B3UVb/hoOxmvB9S7krpPG9D20O3k4jI0+V0rNOIl5gaGfPwY8vFL1bCNGxIbBd8Jvl1/tzamowCbqWGsDZvSUgutdL0zfN0ZzJ4SkIYMRNqLn0QTL0lZjf58t1KzV2FWRiB4BLlZkFNw3kXD9XPNEWXwDmsj+3Mg7sFgWyBlcCFYnRBY5HhqqIOWgDCkJ0Rc2aDuU4a0N30i4YYZpCBkSVBEoXJ59vgtIBTo0Vw6HDx0hY=
+  on:
+    tags: true
+    branch: master
+  distributions: "sdist"
