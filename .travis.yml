@@ -3,19 +3,22 @@ language: python
 python: 3.7
 install: pip install setuptools
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
+- 
 script: python setup.py pytest --addopts "--cov=judge0api --cov-report=xml"
+
 after_script:
-  - ./cc-test-reporter after-build --id 082afe93df2754b0c060ed4a564d5ec7b08ae5e73a47ad7bfd771b503771262f --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build --id 082afe93df2754b0c060ed4a564d5ec7b08ae5e73a47ad7bfd771b503771262f
+  --exit-code $TRAVIS_TEST_RESULT"
 
 deploy:
   provider: pypi
   user: vCra
   password:
-    secure: Vq/UHnj4GBRkXSJoJlIO/9bDtqRRoaz22SVZH9XZM9lG/35rFtJBuS1gAIhsqEnXT/q0/vDnWM7rQj6KpMOFDKMMX5tWb/LIEX2GTmvuuOIsKW765sdWvSnbvzqkMkSyn04XPZGcEYS7av+CTM94nA3QL2SIttf9yFoEt0bYAU/lBpTS2c5Hv6tPDjjno+4lnLxhE11AG/5+PO3nuyJbL7uKi1sf2ZZ4Xi9RNmp56cBohmPAN4raXxtcgqG/zMAWApzigW85zjzl0JHNHLdwH2A7WHbUK8gwxdHy28hqfJIA6fhsJpseiHhtIAtIgy9V6KLHW2FXqLlZCEFPGHGDNyvZIeGfG6IEdQBJH1IQmFnXMC7ONQjDaxs4C5cXFcp5YnH+8NqH9fz4VN4Xkz4UgEg2jGQjb2AzEMT1c3jvY/S7JJ8u7RZOj/FQNOtCJ8yTyDQi2+w4oMxamIHWf48JmB4te9RD3qlQVKNCtftj71n/Wg5Q/PjO9aHFAdEcuffc/9tQDNUob1/Er7Wr24hMtjIFm6fKg8eJzdgbY0tIoOErnJMv8lN4SdoAFGoebtmWMtY5DdkvO5VSOWIMMxPBV1Clg6RT+fVj3c5yAV3NWmW61r3aMng5iFhv3Z1zfTZFYtNwHAMk+UNODnL8zzBA+KPLBK9HyeM31Ow9PFJGV7k=
+    secure: D6foy2Xb1pzcInNzZlRpf+nGhrif0zx5mtyjGK2Lgo8DZrmggiS0OF4CTSs2p4iAId9YIj8RGeCQthyUA08FcJBLeTYJIF4SCzZWs94LS4hxnw7NhENblwm3rBldKXgwvPF3ObIPjgKTlFxNj9PjsRWMILCiIQBaaFlm4kHjL4g/DJELcz0kUkvV/M41n5GJ37917GhP1qjfLuHUqFrLauFLViuiiksNvyFxhVJEdRB6Yvy40kPxHzwxKwY1WVf6/yp9W/VtwAEMOas1cPrDgm5Eyi6x4P9PforoHlnFp1RPsdz8iEU+ZW64GdmyCu1JqgaojqkmHanvOsxLz3GK5jNSc+kDHnaDvaoJnurQhj2qCHy8zNcr6gDEmRGOrnaxV8vALRhZLnpkY8ibYU6f1C456PXWgVnNklBh2H2Jy0Fl+f80Dabv3gPiYYIuzWOSH3rUduGDsoKTzwSShwSHfoDs4zkWjZ1OGXoCo6J8Js16aNm/L4NhvP1rj1dq0d/7cRETNCKrxs0F5YXky7EALtriLfquMZSW0Zavi1uEnq1q297aYEYY/rDxVnkGrojRSm0mBdwPRlLZWtVIq5egdxm+K+PNJn5pE2dEIIyiP8T9vxHaTkFWInR0WYuCooGYcnvZ3wEE1CdAr47q9jUCq5EIFDbgyDndKF6EcoBmiBg=
   on:
-    tags: true
     branch: master
   distributions: sdist
