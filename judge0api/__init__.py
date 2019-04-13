@@ -4,7 +4,7 @@
 from . import language, submission
 from .client import Client
 
-__version__ = '0.1.14'
+__version__ = '0.1.15'
 __author__ = 'Aaron Walker <aaw13@aber.ac.uk>'
 __all__ = ['client', 'submission', 'language']
 

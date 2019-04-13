@@ -8,6 +8,13 @@ judge0api
 .. image:: https://travis-ci.com/vCra/judge0api.svg?branch=master
     :target: https://travis-ci.com/vCra/judge0api
 
+.. image:: https://api.codeclimate.com/v1/badges/f61d15c277295dbbfa46/maintainability
+   :target: https://codeclimate.com/github/vCra/judge0api/maintainability
+   :alt: Maintainability
+
+.. image:: https://api.codeclimate.com/v1/badges/f61d15c277295dbbfa46/test_coverage
+   :target: https://codeclimate.com/github/vCra/judge0api/test_coverage
+   :alt: Test Coverage
 
 judge0api is a Python API for interacting with the Judge0 REST API.
 
@@ -29,7 +36,7 @@ Using this tool is super easy!
 Installation
 ------------
 
-Simply run ``pip install mooshak2api``
+Simply run ``pip install judge0api``
 
 Requirements
 ^^^^^^^^^^^^
@@ -41,7 +48,6 @@ Compatibility
 -------------
 
 Only Python >= 3.6 is supported.
-It is recommended you use the latest version of Mooshak 2, as some older versions do not work completely
 
 Help!
 -----
@@ -57,4 +63,4 @@ This software is released under the MIT License
 Authors
 -------
 
-`mooshak2api` was written by `Aaron Walker <aaw13@aber.ac.uk>`_.
+`judge0api` was written by `Aaron Walker <aaw13@aber.ac.uk>`_.
