@@ -1,0 +1,17 @@
+from enum import Enum
+
+
+class Judge0Status(Enum):
+    QUEUED = 1
+    PROCESSING = 2
+    ACCEPTED = 3
+    WRONG_ANSWER = 4
+    TIMEOUT = 5
+    COMPILATION_ERR = 6
+    RUNTIME_SIGSEGV = 7
+    RUNTIME_SIGXFSZ = 8
+    RUNTIME_SIGFPE = 9
+    RUNTIME_SIGABRT = 10
+    RUNTIME_NZEC = 11
+    RUNTIME_OTHER = 12
+    INTERNAL_ERR = 13

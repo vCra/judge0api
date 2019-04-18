@@ -3,10 +3,11 @@
 
 from . import language, submission
 from .client import Client
+from .status import Judge0Status
 
-__version__ = '0.1.15'
+__version__ = '0.1.16'
 __author__ = 'Aaron Walker <aaw13@aber.ac.uk>'
-__all__ = ['client', 'submission', 'language']
+__all__ = ['client', 'submission', 'language', 'Judge0Status']
 
 if __name__ == '__main__':
     pass
