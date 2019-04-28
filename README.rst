@@ -26,12 +26,13 @@ Using this tool is super easy!
 >>> client = api.Client("https://api.judge0.com")
 >>> submission = api.submission.submit(
 ...     client,
-...     open(file.c),
-...     4,
-...     stdin=b'Judge0'
+...     b"print(f'Hello {input()}')",
+...     34,
+...     stdin=b'Judge0',
+...     expected_output=b"Hello Judge0"
 ... )
 >>> submission.stdout
-'hello, Judge0'
+'Hello Judge0'
 
 Installation
 ------------
