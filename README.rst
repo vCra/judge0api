@@ -5,8 +5,17 @@ judge0api
    :target: https://pypi.python.org/pypi/judge0api
    :alt: Latest PyPI version
 
+.. image:: https://img.shields.io/pypi/dm/judge0api.svg
+   :target: https://pypi.python.org/pypi/judge0api/
+
+.. image:: https://img.shields.io/pypi/pyversions/judge0api.svg
+   :target: https://pypi.python.org/pypi/judge0api/
+
 .. image:: https://travis-ci.com/vCra/judge0api.svg?branch=master
     :target: https://travis-ci.com/vCra/judge0api
+
+.. image:: https://readthedocs.org/projects/judge0api/badge/?version=latest
+   :target: http://judge0api.readthedocs.io/?badge=latest
 
 .. image:: https://api.codeclimate.com/v1/badges/f61d15c277295dbbfa46/maintainability
    :target: https://codeclimate.com/github/vCra/judge0api/maintainability
@@ -15,6 +24,10 @@ judge0api
 .. image:: https://api.codeclimate.com/v1/badges/f61d15c277295dbbfa46/test_coverage
    :target: https://codeclimate.com/github/vCra/judge0api/test_coverage
    :alt: Test Coverage
+
+.. image:: https://img.shields.io/github/license/vCra/judge0api.svg
+   :target: https://github.com/vCra/judge0api/blob/master/LICENSE
+
 
 judge0api is a Python API for interacting with the Judge0 REST API.
 
@@ -53,8 +66,12 @@ Only Python >= 3.6 is supported.
 Help!
 -----
 
-Is something not working properly? Are the docs awful? Want to help make this better?
-If the answer is yes then great! All you have to do is open an issue. 
+Your first place to get help should be `The Docs
+<http://docs.python-requests.org/en/master/>`_!
+
+However:
+    Is something not working properly? Are the docs awful? Want to help make this better?
+    If the answer is yes then great! All you have to do is open an issue.
 
 Licence
 -------
