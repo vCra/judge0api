@@ -15,3 +15,4 @@ class Judge0Status(Enum):
     RUNTIME_NZEC = 11
     RUNTIME_OTHER = 12
     INTERNAL_ERR = 13
+    EXEC_FORMAT_ERR = 14
