@@ -15,12 +15,12 @@ def read(filename):
 
 setup(
     name="judge0api",
-    version="0.1.18",
+    version="0.1.19",
     url="https://github.com/vCra/judge0api",
     license='MIT',
 
     author="Aaron Walker",
-    author_email="aaw13@aber.ac.uk",
+    author_email="aaron@vcra.io",
 
     description="A Python API for interacting with the Judge0 REST API",
     long_description=read("README.rst"),
@@ -39,11 +39,12 @@ setup(
     ],
 
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ],
 )

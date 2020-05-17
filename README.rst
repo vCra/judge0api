@@ -37,13 +37,15 @@ Using this tool is super easy!
 
 >>> import judge0api as api
 >>> client = api.Client("https://api.judge0.com")
+>>> client.wait = False  # Not needed on servers which support wait
 >>> submission = api.submission.submit(
 ...     client,
 ...     b"print(f'Hello {input()}')",
-...     34,
+...     71,
 ...     stdin=b'Judge0',
 ...     expected_output=b"Hello Judge0"
 ... )
+>>> submission.load(client)  # Load the status from the server
 >>> submission.stdout
 'Hello Judge0'
 
@@ -67,7 +69,7 @@ Help!
 -----
 
 Your first place to get help should be `The Docs
-<http://docs.python-requests.org/en/master/>`_!
+<https://judge0api.readthedocs.io/en/latest/>`_!
 
 However:
     Is something not working properly? Are the docs awful? Want to help make this better?
@@ -81,4 +83,4 @@ This software is released under the MIT License
 Authors
 -------
 
-`judge0api` was written by `Aaron Walker <aaw13@aber.ac.uk>`_.
+`judge0api` was written by `Aaron Walker <aaron@vcra.io>`_.

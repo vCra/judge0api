@@ -7,12 +7,19 @@ def test_pass():
 
 def test_homepage_example():
     import judge0api as api
+    import time
+
     client = api.Client("https://api.judge0.com")
+    client.wait = False
+
     submission = api.submission.submit(
         client,
         b"print(f'Hello {input()}')",
-        34,
+        71,
         stdin=b'Judge0',
         expected_output=b"Hello Judge0"
     )
-    assert submission.status['id'] == 3
+    time.sleep(2)
+    submission.load(client)
+
+    assert submission.status['id'] == api.Judge0Status.ACCEPTED.value
