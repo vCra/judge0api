@@ -165,10 +165,15 @@ class Submission:
         if self.expected_output:
             data.update({"expected_output": base64.b64encode(self.expected_output).decode('ascii')})
 
+        for field in self._extra_send_fields:
+            if self.__getattribute__(field) is not None:
+                data.update({field: self.__getattribute__(field)})
+
         r = client.session.post(f"{client.endpoint}/submissions/", headers=headers, params=params, json=data)
         r.raise_for_status()
 
-        self.set_properties(r)
+        json = r.json()
+        self.set_properties(dict(json))
 
     def set_properties(self, r):
         """
@@ -176,14 +181,13 @@ class Submission:
         :param r:
         :return:
         """
-        json = r.json()
-        for key in json.keys():
+        for key, value in r.items():
             if key in self._encoded_fields:
                 # TODO: make nicer
                 # A key might be present, but with no Value
-                setattr(self, key, base64.b64decode(json[key].encode()) if json[key] else None)
+                setattr(self, key, base64.b64decode(value.encode()) if value else None)
             else:
-                setattr(self, key, json[key])
+                setattr(self, key, value)
 
 
 def get(client, submission_token):
@@ -199,7 +203,7 @@ def get(client, submission_token):
     return submission
 
 
-def submit(client, source_code, language, stdin=None, expected_output=None):
+def submit(client, source_code, language, stdin=None, expected_output=None, **kwargs):
     """
     Creates and submits
     :param client: the judge0 client object
@@ -207,9 +211,11 @@ def submit(client, source_code, language, stdin=None, expected_output=None):
     :param language: the language ID for this program
     :param stdin: a byte-string of the input for this program
     :param expected_output: a byte-string of the expected output
+    :param **kwargs: any other extra arguments to be sent to the judge
     :return: submission
     """
     submission = Submission()
+    submission.set_properties(kwargs)
     submission.source_code = source_code
     submission.language_id = language
     submission.stdin = stdin
