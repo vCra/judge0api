@@ -15,7 +15,7 @@ def read(filename):
 
 setup(
     name="judge0api",
-    version="0.1.19",
+    version="0.1.20",
     url="https://github.com/vCra/judge0api",
     license='MIT',
 
