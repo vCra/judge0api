@@ -143,7 +143,9 @@ class Submission:
         }
         r = client.session.get(f"{client.endpoint}/submissions/{self.token}/", headers=headers, params=params)
         r.raise_for_status()
-        self.set_properties(r)
+
+        json = r.json()
+        self.set_properties(dict(json))
 
     def submit(self, client):
         """
