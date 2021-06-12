@@ -18,7 +18,7 @@ def test_homepage_example():
         stdin=b'Judge0',
         expected_output=b"Hello Judge0"
     )
-    time.sleep(2)
+    time.sleep(3)
     submission.load(client)
 
     assert submission.status['id'] == api.Judge0Status.ACCEPTED.value
